@@ -6,7 +6,7 @@ class Solution {
     public int countingJumps(int currentPosition, int    finalPosition, int jumpDistance){
         int sideToSideDistance = finalPosition - currentPosition ;
         int numberOfJumps = sideToSideDistance/jumpDistance;
-        if (numberOfJumps < sideToSideDistance) {
+        if (numberOfJumps * jumpDistance < sideToSideDistance) {
             numberOfJumps += 1;
         }
         return numberOfJumps;
