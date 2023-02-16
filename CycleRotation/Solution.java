@@ -1,9 +1,9 @@
 class Solution {
     public int[] solution(int[] A, int K) {    
-        return rotatingArrayElemente(A,K);          
+        return rotatingArrayElements(A,K);          
     }
 
-    public int[] rotatingArrayElemente (int[] A, int K){
+    public int[] rotatingArrayElements (int[] A, int K){
         int i;
         while (K > 0){            
             int lastArrayElement = A[A.length - 1];
