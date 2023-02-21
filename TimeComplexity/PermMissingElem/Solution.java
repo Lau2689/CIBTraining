@@ -6,7 +6,7 @@ class Solution {
     public int solution(int[] A) {
         // Implement your solution here
         if (A.length == 0){
-            findingMissingNumberWhenArrayLengthZero (A);
+            return missingNumber = 1;
         }
         if (A.length == 1) {
             findingMissingNumberWhenArrayLengthOne(A);
@@ -19,11 +19,7 @@ class Solution {
         }
         return missingNumber;
     }
-    
-    public int findingMissingNumberWhenArrayLengthZero (int[] givenArray){        
-        return  missingNumber = 1;
-    }
-    
+       
     public int findingMissingNumberWhenArrayLengthOne (int[] givenArray){
         if (givenArray[0] == 1) {
             missingNumber = 2;
