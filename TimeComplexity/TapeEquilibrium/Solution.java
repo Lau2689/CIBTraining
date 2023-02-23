@@ -1,22 +1,46 @@
-public class Solution {
+import java.util.*;
 
-    public int solution (int [] A) {
-        return findingTheMinimalDiference (A);
+class Solution {
+
+    public int solution(int[] A) {       
+        return findingTheMinimalDiference(A);
     }
-
+    
     public int findingTheMinimalDiference(int[] givenArray) {
+        int diference;
+        int elementToRest=0;
         int lowestDiference = 0;
-        int firstSumPart = 0;
-        int secondSumPart = 0;
-        for (int i = 0; i < givenArray.length - 1 ; i++){
-            firstSumPart += givenArray[i];
-            System.out.println(String.valueOf(firstSumPart));
+        int firstSumPartNumbers = 0;
+        int arrayElementsTotalSum = 0;
+        int secondSumPartNumbers= 0;
+        int i;
 
+        List<Integer> listGivenArraytoRigth = new ArrayList<>();
+        List<Integer> listGivenArraytoLeft = new ArrayList<>();
+        List<Integer> listTwoPartsDiference = new ArrayList<>();
+
+        for ( i = 0; i < givenArray.length - 1 ; i++){
+            firstSumPartNumbers += givenArray[i];
+            listGivenArraytoRigth.add(firstSumPartNumbers);
+            //System.out.println(listGivenArraytoRigth);
         }
-        for (int i = 0; i < givenArray.length;i ++){
-            
+        for (i = 0 ; i < givenArray.length;i ++){
+            arrayElementsTotalSum = arrayElementsTotalSum + givenArray[i];
+            //System.out.println(arrayElementsTotalSum);
+        }        
+        for (i = 0 ; i < givenArray.length -1;i ++){
+            elementToRest += givenArray[i];
+            secondSumPartNumbers = arrayElementsTotalSum - elementToRest;
+            listGivenArraytoLeft.add(secondSumPartNumbers);
+           
         }
+        for (i = 0; i < listGivenArraytoLeft.size() & i < listGivenArraytoRigth.size(); i ++){
+            diference = listGivenArraytoRigth.get(i) - listGivenArraytoLeft.get(i);
+            diference = Math.abs(diference);
+            listTwoPartsDiference.add(diference);
+        }
+        Collections.sort(listTwoPartsDiference);
+        lowestDiference = listTwoPartsDiference.get(0);        
         return lowestDiference;
     }
-
 }
