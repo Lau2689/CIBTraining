@@ -22,17 +22,14 @@ class Solution {
         for ( i = 0; i < givenArray.length - 1 ; i++){
             firstSumPartNumbers += givenArray[i];
             listGivenArraytoRigth.add(firstSumPartNumbers);
-            //System.out.println(listGivenArraytoRigth);
         }
         for (i = 0 ; i < givenArray.length;i ++){
             arrayElementsTotalSum = arrayElementsTotalSum + givenArray[i];
-            //System.out.println(arrayElementsTotalSum);
         }        
         for (i = 0 ; i < givenArray.length -1;i ++){
             elementToRest += givenArray[i];
             secondSumPartNumbers = arrayElementsTotalSum - elementToRest;
-            listGivenArraytoLeft.add(secondSumPartNumbers);
-           
+            listGivenArraytoLeft.add(secondSumPartNumbers);           
         }
         for (i = 0; i < listGivenArraytoLeft.size() & i < listGivenArraytoRigth.size(); i ++){
             diference = listGivenArraytoRigth.get(i) - listGivenArraytoLeft.get(i);
