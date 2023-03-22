@@ -6,8 +6,7 @@ public class Distinct {
     int numberOfDistinctValues;
   
     public int solution (int [] A) {
-        int [] arrayOfDistinctsValuesinArrayA = Arrays.stream(A)
-                .sorted()
+        int [] arrayOfDistinctsValuesinArrayA = Arrays.stream(A)                
                 .distinct()
                 .toArray();        
         numberOfDistinctValues = arrayOfDistinctsValuesinArrayA.length;
