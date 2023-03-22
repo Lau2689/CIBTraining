@@ -10,11 +10,11 @@ public class MaxProductOfThree {
     public int solution (int[] A){
         Arrays.sort(A);
         maxProductFromLastPosition = A[A.length - 1] * A[A.length - 2] * A[A.length - 3];
-        maxProductoFromFirstPosition = A[0] * A[1] * A[A.length - 1];
-        if (maxProductFromLastPosition > maxProductoFromFirstPosition) {
+        maxProductFromFirstPosition = A[0] * A[1] * A[A.length - 1];
+        if (maxProductFromLastPosition > maxProductFromFirstPosition) {
             theMaxProduct = maxProductFromLastPosition;
         }else{
-            theMaxProduct = maxProductoFromFirstPosition;
+            theMaxProduct = maxProductFromFirstPosition;
         }
         return theMaxProduct;
     }
