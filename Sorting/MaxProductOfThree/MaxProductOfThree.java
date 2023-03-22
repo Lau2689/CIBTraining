@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MaxProductOfThree {
     int maxProductFromLastPosition;
     int maxProductoFromFirstPosition;
-    int theMaxProduct
+    int theMaxProduct;
         
     public int solution (int[] A){
         Arrays.sort(A);
