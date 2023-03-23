@@ -6,8 +6,10 @@ public class Triangle {
     int existingTriangleTriplet;
     public int solution(int[] A){
         Arrays.sort(A);
-        for(int i = 0; i < A.length - 2; i ++) {
-            if (A[i] + A[i+1] > A[i+2] && A[i+1] + A[i+2] > A[i] && A[i+2] + A[i] > A[i+1]) {
+        long[] longArrayA = Arrays.stream(A).asLongStream().toArray();
+        for(int i = 0; i < longArrayA.length - 2; i ++) {
+            if (longArrayA[i] + longArrayA[i+1] > longArrayA[i+2] && longArrayA[i+1] +
+                    longArrayA[i+2] > longArrayA[i] && longArrayA[i+2] + longArrayA[i] > longArrayA[i+1]) {
                 existingTriangleTriplet= 1;
                 break;
             }
