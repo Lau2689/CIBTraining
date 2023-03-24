@@ -1,0 +1,27 @@
+package com.example.codilityExercices;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+public class BracketsTests {
+    private final Brackets brackets = new Brackets();
+
+    @Test
+    public void whenProperlyNestedEspecialCharactersAreGiven (){
+        String S =  "{[()()]}";
+        int result = brackets.solution(S);
+        assertEquals(1,result);
+    }
+    @Test
+    public void whenStringIsEmpty (){
+        String S =  "";
+        int result = brackets.solution(S);
+        assertEquals(1,result);
+    } 
+
+    @Test
+    public void givenAStringWithOddLength (){
+        String S =  "{[()(]}";
+        int result = brackets.solution(S);
+        assertEquals(1,result);
+    }
+}
