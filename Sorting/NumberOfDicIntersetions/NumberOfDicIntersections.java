@@ -11,20 +11,16 @@ public class NumberOfDicIntersections {
     long maxPointCircle1;
     long minPointCircle2;
     long maxPointCircle2;
-    List<Long> valuesOfFirstCircle = new ArrayList<>();
     List <int[]> allPairs = new ArrayList<>();
 
     public int solution(int[] A){
         for (i = 0; i < A.length; i++) {
-            minPointCircle1 = i - A[i];
-            maxPointCircle1 = i + A[i];
-            ValueRange circleRange = ValueRange.of(minPointCircle1,maxPointCircle1);
-            /*for (long values = minPointCircle1; values <= maxPointCircle1; values++ ) {
-                valuesOfFirstCircle.add(values);
-            }*/
+            minPointCircle1 = Long.valueOf(i) - Long.valueOf(A[i]);
+            maxPointCircle1 = Long.valueOf(i) + Long.valueOf(A[i]);
+            ValueRange circleRange = ValueRange.of(minPointCircle1,maxPointCircle1);            
             for (j = i +1; j < A.length; j++ ){
-                minPointCircle2 = j - A[j];
-                maxPointCircle2 = j + A[j];
+                minPointCircle2 = Long.valueOf(j) - Long.valueOf(A[j]);
+                maxPointCircle2 = Long.valueOf(j) + Long.valueOf(A[j]);
                 for (long values2 = minPointCircle2; values2 <= maxPointCircle2; values2++ ) {
                     if (circleRange.isValidValue(values2)) {
                         int [] pair = {i,j};
@@ -32,8 +28,7 @@ public class NumberOfDicIntersections {
                         break;
                     }
                 }
-            }
-            //valuesOfFirstCircle.clear();
+            }           
         }
         numberOfIntersections = allPairs.size();
         return numberOfIntersections;
