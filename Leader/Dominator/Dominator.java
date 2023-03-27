@@ -1,11 +1,15 @@
 package com.example.codilityExercices;
-
 public class Dominator {
+
     int dominatorPositions;
     int counter;
+    int j;
 
     public int solution(int[] A){
-        int j;
+        return findingDominatorPositions(A);
+    }
+    
+    private int findingDominatorPositions (int[] A){    
         if (A.length == 0){
             dominatorPositions = -1;
         }
@@ -20,10 +24,10 @@ public class Dominator {
             if (counter + 1 > A.length/2) {
                 dominatorPositions = dominator;
                 break;
-            }
-            else dominatorPositions = -1;
+            }else dominatorPositions = -1;
             counter = 0;
         }
         return dominatorPositions;
+        
     }
 }
