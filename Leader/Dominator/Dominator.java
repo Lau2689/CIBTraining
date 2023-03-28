@@ -1,16 +1,18 @@
 package com.example.codilityExercices;
 
-public class Dominator {
-    int dominatorPositions;
-    int counter;
+public class Dominator {    
     
     public int solution(int[] A){
         return findingDominatorPositions(A);
     }
     
     private int findingDominatorPositions (int[] A){    
+        int dominatorPositions= 0;
+        int counter = 0;
+        
         if (A.length == 0){
-            dominatorPositions = -1;
+            return -1;
+        } else {
         }
         for (int i = 0; i < A.length; i ++){
             int dominator = i;
