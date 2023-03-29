@@ -37,7 +37,7 @@ public class EquiLeader {
                     counter += 1;
                 }
             }
-            if (counter + 1 > Math.floorDiv(A.length, 2)) {
+            if (counter + 1 > A.length / 2) {
                 arraryAleader = value;
                 return  arraryAleader;
 
