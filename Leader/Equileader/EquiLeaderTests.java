@@ -29,13 +29,13 @@ public class EquiLeaderTests {
     }
 
     @ParameterizedTest
-    @MethodSource ({"whenThereIsALeaderReturnsTrue"})
+    @MethodSource ({"whenThereIsALeaderReturnsTheLeader"})
     void shouldReturnTrueWhenThereIsALeader(int [] input, int expected){
         int result = EquiLeader.findingTheLeader(input);
         assertEquals(expected,result);
 
     }
-    private static Stream<Arguments> whenThereIsALeaderReturnsTrue(){
+    private static Stream<Arguments> whenThereIsALeaderReturnsTheLeader(){
         return Stream.of(
                 Arguments.of(new int []{4,3,4,4,4,2}, 4),
                 Arguments.of(new int []{2,4,3,3,3,3,3, 2,4,3}, 3)
